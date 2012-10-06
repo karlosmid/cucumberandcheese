@@ -1,4 +1,4 @@
 require "rubygems"
 require "watir-webdriver"
-iAmFirefox = Watir::Browser.new :ie
-iAmFirefox.goto 'http://www.apple.com'
+iAmFirefox = Watir::Browser.new :chrome
+iAmFirefox.goto 'http://www.google.com'
