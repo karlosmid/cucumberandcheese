@@ -11,5 +11,6 @@ iAmFirefox.select_list(:id => 'order_pay_type').select('Check')
 iAmFirefox.select_list(:id => 'order_pay_type').select('Credit card')
 iAmFirefox.select_list(:id => 'order_pay_type').select('Purchase order')
 iAmFirefox.button(:name => 'commit').click
-sleep 5
+fail 'Browser page did not contain "Thank you for adopting a puppy!' \
+unless iAmFirefox.text.include? 'Thank you for adopting a Karlo!'
 iAmFirefox.close
