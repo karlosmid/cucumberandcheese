@@ -1,13 +1,16 @@
 # encoding: utf-8
 require "rubygems"
 require "watir-webdriver"
-iAmFirefox = Watir::Browser.start 'http://puppies.herokuapp.com', :firefox
-iAmFirefox.button(:value => 'View Details', :index => 2).click
-iAmFirefox.button(:value => 'Adopt Me!' ).click
-iAmFirefox.button(:value => 'Adopt Another Puppy' ).click
 
-iAmFirefox.button(:value => 'View Details', :index => 1).click
-iAmFirefox.button(:value => 'Adopt Me!' ).click
+def adopt_puppy_by_number_position_on_page_counting_from_top( browser, numberPositionCountingFromTheTopOfPage )
+	browser.button( :value => 'View Details', :index => numberPositionCountingFromTheTopOfPage - 1 ).click
+	browser.button( :value => 'Adopt Me!' ).click
+end
+
+iAmFirefox = Watir::Browser.start 'http://puppies.herokuapp.com', :firefox
+adopt_puppy_by_number_position_on_page_counting_from_top( iAmFirefox, 1 )
+iAmFirefox.button(:value => 'Adopt Another Puppy' ).click
+adopt_puppy_by_number_position_on_page_counting_from_top( iAmFirefox, 2 )
 iAmFirefox.button(:value => 'Complete the Adoption' ).click
 iAmFirefox.text_field(:id => 'order_name').set('Karlo Smid')
 iAmFirefox.text_field(:id => 'order_address').set('Hruševečka 3 10000 Zagreb!')
