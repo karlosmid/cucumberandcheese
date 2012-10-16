@@ -1,11 +1,12 @@
 *.gem
 *.rbc
 .bundle
+Gemfile.lock
 .config
 coverage
 InstalledFiles
 lib/bundler/man
-pkg
+pkg/*
 rdoc
 spec/reports
 test/tmp
