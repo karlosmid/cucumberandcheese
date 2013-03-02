@@ -6,9 +6,11 @@ require_relative "adoption_helper"
 include AdoptionHelper
 
 @i_am_firefox = goto_to 'http://puppies.herokuapp.com', :firefox
-adopt_puppy_by_number_position_on_page_counting_from_top 1
+view_details_of_puppy_by_number_position_on_page_counting_from_top 1
+adopt_the_puppy
 continue_adopting_pupies
-adopt_puppy_by_number_position_on_page_counting_from_top 2
+view_details_of_puppy_by_number_position_on_page_counting_from_top 2
+adopt_the_puppy
 complete_adoptation_of_puppies
 enter_your_purchase_details( 'Karlo Šmid', 'Hruševečka 3', 'ides@kam.hr', 'Credit card' )
 sleep 5

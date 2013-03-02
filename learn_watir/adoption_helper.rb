@@ -1,7 +1,10 @@
 # encoding: utf-8
 module AdoptionHelper
-  def adopt_puppy_by_number_position_on_page_counting_from_top( numberPositionCountingFromTheTopOfPage )
+  def view_details_of_puppy_by_number_position_on_page_counting_from_top( numberPositionCountingFromTheTopOfPage )
         @i_am_firefox.button( :value => 'View Details', :index => numberPositionCountingFromTheTopOfPage - 1 ).click
+  end
+
+  def adopt_the_puppy
 	@i_am_firefox.button( :value => 'Adopt Me!' ).click
   end
 
